@@ -5,7 +5,6 @@ import logging
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-logger.info('Loading function')
 print('Loading function')
 
 field21 = '-1'
@@ -19,9 +18,7 @@ def lambda_handler(event, context):
 
     for record in event['records']:
         print('recordId', record['recordId'])
-        print('recorddataBefore', record['data'])
         payload = base64.b64decode(record['data'])
-        print('recorddataAfter', payload)
 
         _arr = payload.split(delimiter)
 
